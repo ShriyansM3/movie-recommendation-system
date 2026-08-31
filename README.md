@@ -19,14 +19,14 @@ A movie recommendation system that suggests similar movies based on content feat
 * Pandas
 * TMDb API
 * Streamlit
+* httpx
 
 ## How It Works
-
-1. Movie metadata is preprocessed and transformed into TF-IDF vectors.
+1. Movie metadata is preprocessed and transformed into a 50,000-feature TF-IDF representation across 45K+ movies.
 2. A cosine similarity matrix is computed to measure similarity between movies.
 3. When a user searches for a movie, the system retrieves the most similar titles based on these vectors.
-4. If sufficient metadata is unavailable, the application falls back to genre-based popular movie recommendations from TMDb.
-5. The backend serves recommendation requests through FastAPI while fetching additional movie information asynchronously.
+4. If sufficient metadata is unavailable, the application falls back to genre- and popularity-based recommendations from TMDb.
+5. The backend serves recommendation requests through FastAPI, using `httpx.AsyncClient` to fetch movie details and posters from TMDb concurrently, with custom HTTP 502 handling for failed upstream requests.
 
 ## Project Structure
 
