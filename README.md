@@ -68,6 +68,4 @@ streamlit run app.py
 * Caching for external API responses
 * Support for TV shows and multilingual recommendations
 
-## License
 
-This project was built for educational and learning purposes.
